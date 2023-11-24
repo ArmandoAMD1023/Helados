@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helados-deployment
+spec:
+  replicas: 3  # Número de réplicas que deseas para tu aplicación
+  selector:
+    matchLabels:
+      app: helados
+  template:
+    metadata:
+      labels:
+        app: helados
+    spec:
+      containers:
+      - name: heladosapp
+        image: armandoamd1023/helados:tagname  # Debe apuntar a la imagen correcta
+        ports:
+        - containerPort: 8080

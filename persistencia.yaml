@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: PersistenciaVolumeClain
+metadata: 
+  name: postgres-deployment
+spec:
+  accessModes:
+    - ReadWriteOnce
+
+
+---
+apiVersion: apps/v1
+kind: PersistenciaVolume
+metadata:
+  name: postgres-deployment
+spec:
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+  mountPath: /var/lib/postgresql/data
+  
+
+
